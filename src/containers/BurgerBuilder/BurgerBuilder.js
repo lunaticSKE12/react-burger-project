@@ -54,17 +54,7 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
-    // alert('You continue!')
-    const queryParam = []
-    for (let i in this.state.ingredients) {
-      queryParam.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
-    }
-    queryParam.push('price=' + this.state.totalPrice)
-    const queryString = queryParam.join('&')
-    this.props.history.push({
-      pathname: '/checkout',
-      search: '?' + queryString
-    })
+    this.props.history.push('/checkout')
   }
   render() {
     const disabledInfo = {
