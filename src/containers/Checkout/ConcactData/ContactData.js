@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Button from '../../../components/UI/Button/Button'
 import classes from './ContactData.css'
 import Spinner from '../../../components/UI/Spinner/Spinner'
-import axios from '../../../axios-order'
+import axios from '../../../axios-orders'
 import Input from '../../../components/UI/Input/Input'
 
 class ContactData extends Component {
