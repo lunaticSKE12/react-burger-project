@@ -42,12 +42,13 @@ const auth = props => {
     }
   })
   const [isSignup, setIsSignup] = useState(true)
+  const { buildingBurger, authRedirectPath, onSetAuthRedirectPath, loading } = props
 
   useEffect(() => {
-    if (!props.buildingBurger && props.authRedirectPath !== '/') {
-      props.onSetAuthRedirectPath()
+    if (!buildingBurger && authRedirectPath !== '/') {
+      onSetAuthRedirectPath()
     }
-  }, [])
+  }, [buildingBurger, authRedirectPath, onSetAuthRedirectPath])
 
   const inputChangedHandler = (event, controlName) => {
     const updatedControls = updateObject(authForm, {
@@ -90,7 +91,7 @@ const auth = props => {
       changed={(event) => inputChangedHandler(event, formElement.id)} />
   ))
 
-  if (props.loading) {
+  if (loading) {
     form = <Spinner />
   }
 
